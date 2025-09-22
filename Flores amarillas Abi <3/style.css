@@ -1,0 +1,159 @@
+body {
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', cursive;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor-globos {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.globo {
+    background-color: yellow;
+    color: #333;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    animation: flotar 4s infinite ease-in-out;
+    background: radial-gradient(circle at 30% 30%, yellow, #e5a400);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.globo:nth-child(2) { animation-delay: 0.5s; }
+.globo:nth-child(3) { animation-delay: 1s; }
+.globo:nth-child(4) { animation-delay: 1.5s; }
+
+.contenedor {
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.titulo-amor {
+    font-size: 3em;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mensaje {
+    font-size: 2em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    animation: pulsate 2s infinite;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.flores {
+    width: 300px;
+    margin-top: 20px;
+    animation: popUp 1s ease-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes popUp {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 🎇 CÓDIGO FINAL PARA LOS FUEGOS ARTIFICIALES 🎆 */
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: yellow;
+    bottom: 0;
+    animation: firework-rise 2.5s ease-out infinite;
+    opacity: 0;
+}
+
+.firework:nth-child(1) { left: 15%; animation-delay: 0s; }
+.firework:nth-child(2) { left: 85%; animation-delay: 0.5s; }
+.firework:nth-child(3) { left: 40%; animation-delay: 1s; }
+.firework:nth-child(4) { left: 60%; animation-delay: 1.5s; }
+.firework:nth-child(5) { left: 25%; animation-delay: 2s; }
+.firework:nth-child(6) { left: 75%; animation-delay: 2.5s; }
+
+@keyframes firework-rise {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-70vh); opacity: 1; }
+    100% { transform: translateY(-70vh) scale(0); opacity: 0; }
+}
+
+.firework::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 140, 0, 0));
+    animation: firework-burst 0.5s ease-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes firework-burst {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* 🌸 CÓDIGO FINAL DE LOS PÉTALOS 🌸 */
+.petalo {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url('petalo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: caer 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes caer {
+    0% { transform: translateY(-120vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(120vh) translateX(50px) rotate(360deg); opacity: 0; }
+}
+
+.contenedor:hover .mensaje {
+    opacity: 1;
+}
