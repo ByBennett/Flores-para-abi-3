@@ -92,7 +92,6 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* 🎇 CÓDIGO FINAL PARA LOS FUEGOS ARTIFICIALES 🎆 */
 .firework {
     position: absolute;
     width: 5px;
@@ -136,7 +135,6 @@ body {
     100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
 }
 
-/* 🌸 CÓDIGO FINAL DE LOS PÉTALOS 🌸 */
 .petalo {
     position: absolute;
     width: 25px;
@@ -156,4 +154,18 @@ body {
 
 .contenedor:hover .mensaje {
     opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .titulo-amor {
+        font-size: 2em; 
+    }
+
+    .mensaje {
+        font-size: 1.5em;
+    }
+
+    .flores {
+        width: 200px;
+    }
 }
