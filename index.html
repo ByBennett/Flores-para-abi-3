@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenedor-globos">
+        <div class="globo">L</div>
+        <div class="globo">O</div>
+        <div class="globo">V</div>
+        <div class="globo">E</div>
+    </div>
+
+    <div class="contenedor">
+        <h1 class="titulo-amor">Estas son flores para ti</h1>
+        <p class="mensaje">Te amo corazoncito okey? 🫶🏻</p>
+        <img class="flores" src="flores ama_2.png" alt="Ramo de flores amarillas">
+    </div>
+
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+
+<script>
+    function createPetal() {
+        const petal = document.createElement('div');
+        petal.classList.add('petalo');
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.top = -50 + 'px';
+        petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+        document.body.appendChild(petal);
+
+        petal.addEventListener('animationend', () => {
+            petal.remove();
+        });
+    }
+
+    setInterval(createPetal, 150);
+</script>
+
+</body>
+</html>
